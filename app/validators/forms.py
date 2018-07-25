@@ -17,6 +17,8 @@ class ClientForm(Form):
         :return:
         '''
         try:
+            # 将用户传来的参数去枚举类中匹配，如果匹配失败，则抛出异常
+            # 如果匹配成功则将int转换成枚举
             client = ClientTypeEnum(value.data)
         except ValueError as e:
             raise e

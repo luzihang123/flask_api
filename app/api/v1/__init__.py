@@ -2,7 +2,7 @@
 
 from flask import Blueprint
 
-from app.api.v1 import user, book
+from app.api.v1 import user, book, client
 
 
 def create_blueprint_v1():
@@ -12,5 +12,6 @@ def create_blueprint_v1():
     user.api.register(bp_v1)
     # book.api.register(bp_v1, url_prefix='/book')
     book.api.register(bp_v1)
+    client.api.register(bp_v1)
 
     return bp_v1
